@@ -4,10 +4,12 @@ from Account import Account
 class Main:
     pass
 
-## c1 = Client("Brenda Barbosa Silva", "(61) 7277-4561")
 c1 = Client()
-c1.set_info("Brenda Barbosa Silva", "(61) 7277-4561")
-account1 = Account(c1.get_name(), 6565, 0)
+account1 = Account()
 
+c1.set_info('Brenda Barbosa', '1195741-5216')
+account1.set_info(c1.get_name(), c1.get_phone_number())
 
-print(f"{account1.holder}\nNumero: {account1.number}\nSaldo: {account1.balance}")
+account1.deposit(1000.00)
+account1.withdrawal(500.00)
+print(account1.bankStatement())
